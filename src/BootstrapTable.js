@@ -163,7 +163,7 @@ class BootstrapTable extends Component {
     } else {
       // #125
       if (!options.page &&
-        page >= Math.ceil(nextProps.data.length / sizePerPage)) {
+        page > Math.ceil(nextProps.data.length / sizePerPage)) {
         page = 1;
       }
       const sortInfo = this.store.getSortInfo();
@@ -524,6 +524,10 @@ class BootstrapTable extends Component {
 
   getCurrentPage() {
     return this.state.currPage;
+  }
+
+  getTableDataIgnorePaging() {
+    return this.store.getCurrentDisplayData();
   }
 
   getPageByRowKey = rowKey => {
@@ -907,7 +911,8 @@ BootstrapTable.propTypes = {
     clickToSelect: PropTypes.bool,
     hideSelectColumn: PropTypes.bool,
     clickToSelectAndEditCell: PropTypes.bool,
-    showOnlySelected: PropTypes.bool
+    showOnlySelected: PropTypes.bool,
+    unselectable: PropTypes.array
   }),
   cellEdit: PropTypes.shape({
     mode: PropTypes.string,
@@ -992,7 +997,8 @@ BootstrapTable.defaultProps = {
     clickToSelect: false,
     hideSelectColumn: false,
     clickToSelectAndEditCell: false,
-    showOnlySelected: false
+    showOnlySelected: false,
+    unselectable: []
   },
   cellEdit: {
     mode: Const.CELL_EDIT_NONE,
