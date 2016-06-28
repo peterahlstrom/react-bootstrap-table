@@ -790,6 +790,7 @@ class BootstrapTable extends Component {
             saveText= { this.props.options.saveText }
             closeText= { this.props.options.closeText }
             ignoreEditable={ this.props.options.ignoreEditable }
+            deleteBtnDisabled={ this.props.options.deleteBtnDisabled }
             onAddRow={ this.handleAddRow }
             onDropRow={ this.handleDropRow }
             onSearch={ this.handleSearch }
@@ -970,7 +971,8 @@ BootstrapTable.propTypes = {
     deleteText: PropTypes.string,
     saveText: PropTypes.string,
     closeText: PropTypes.string,
-    ignoreEditable: PropTypes.bool
+    ignoreEditable: PropTypes.bool,
+    deleteBtnDisabled: PropTypes.bool
   }),
   fetchInfo: PropTypes.shape({
     dataTotalSize: PropTypes.number

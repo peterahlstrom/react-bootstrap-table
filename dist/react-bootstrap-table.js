@@ -1021,6 +1021,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            saveText: this.props.options.saveText,
 	            closeText: this.props.options.closeText,
 	            ignoreEditable: this.props.options.ignoreEditable,
+	            deleteBtnDisabled: this.props.options.deleteBtnDisabled,
 	            onAddRow: this.handleAddRow,
 	            onDropRow: this.handleDropRow,
 	            onSearch: this.handleSearch,
@@ -1152,7 +1153,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    deleteText: _react.PropTypes.string,
 	    saveText: _react.PropTypes.string,
 	    closeText: _react.PropTypes.string,
-	    ignoreEditable: _react.PropTypes.bool
+	    ignoreEditable: _react.PropTypes.bool,
+	    deleteBtnDisabled: _react.PropTypes.bool
 	  }),
 	  fetchInfo: _react.PropTypes.shape({
 	    dataTotalSize: _react.PropTypes.number
@@ -4618,7 +4620,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	          className: 'btn btn-warning react-bs-table-del-btn',
 	          'data-toggle': 'tooltip',
 	          'data-placement': 'right',
-	          title: 'Drop selected row',
+	          title: 'Ta bort vald rad',
+	          disabled: this.props.deleteBtnDisabled,
 	          onClick: this.handleDropRowBtnClick }, _react2['default'].createElement('i', { className: 'glyphicon glyphicon-trash' }), ' ', this.props.deleteText);
 	      }
 
@@ -4727,6 +4730,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  onShowOnlySelected: _react.PropTypes.func,
 	  enableInsert: _react.PropTypes.bool,
 	  enableDelete: _react.PropTypes.bool,
+	  deleteBtnDisabled: _react.PropTypes.bool,
 	  enableSearch: _react.PropTypes.bool,
 	  enableShowOnlySelected: _react.PropTypes.bool,
 	  columns: _react.PropTypes.array,
@@ -4743,6 +4747,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	ToolBar.defaultProps = {
 	  enableInsert: false,
 	  enableDelete: false,
+	  deleteBtnDisabled: true,
 	  enableSearch: false,
 	  enableShowOnlySelected: false,
 	  clearSearch: false,
