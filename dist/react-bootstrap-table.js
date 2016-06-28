@@ -1021,7 +1021,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            saveText: this.props.options.saveText,
 	            closeText: this.props.options.closeText,
 	            ignoreEditable: this.props.options.ignoreEditable,
-	            deleteBtnDisabled: this.props.options.deleteBtnDisabled,
+	            deleteBtnDisabled: this.props.deleteBtnDisabled,
 	            onAddRow: this.handleAddRow,
 	            onDropRow: this.handleDropRow,
 	            onSearch: this.handleSearch,
