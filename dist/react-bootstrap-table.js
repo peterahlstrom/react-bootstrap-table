@@ -4689,6 +4689,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        if (!editable) {
 	          // Hides fields corresponding to not editable columns.
+	          column.hiddenOnInsert = true;
 	          hiddenOnInsert = true;
 	        }
 	        if (autoValue || hiddenOnInsert) {
